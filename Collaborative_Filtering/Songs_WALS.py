@@ -12,6 +12,11 @@ if not tf.__version__.startswith('1'):
     raise ValueError('This code requires TensorFlow V1.x')
 
 # Load the dataset
+# Getting the Last.fm dataset
+
+# You can download the dataset from this link: http://ocelma.net/MusicRecommendationDataset/lastfm-360K.html
+
+# For our purposes, the file userid-timestamp-artid-artname-traid-traname.tsv will be particularly useful.
 data = pd.read_csv('lastfm_data.tsv', sep='\t', header=None, error_bad_lines=False)
 data.columns = ['userId', 'timestamp', 'artistId', 'artistName', 'songId', 'songName']
 
